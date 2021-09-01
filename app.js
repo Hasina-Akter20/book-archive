@@ -15,7 +15,7 @@ const searchBook=()=>{
         const url=`https://openlibrary.org/search.json?q=${searchValue}`;
         fetch(url)
         .then(res=>res.json())
-        .then(data=>searchBookList(data.docs)) 
+        .then(data=>searchBookList(data)) 
         .catch(error => displayError(error));
 
     }
@@ -28,10 +28,13 @@ const displayError = error => {
 // show output 
 const searchBookList=(dataList)=>{
     const outputDiv= document.getElementById('search-result');
-    if(dataList.length===0){
+    // counter 
+    const counterNumber=dataList.numFound;
+    document.getElementById('result-counter').innerText=counterNumber;
+    if(dataList.docs.length===0){
         document.getElementById('error-message').style.display = 'block';
     }
-    dataList.forEach(data =>{
+    dataList.docs.forEach(data =>{
     const div=document.createElement('div');
     div.classList.add('col');
     div.innerHTML=`

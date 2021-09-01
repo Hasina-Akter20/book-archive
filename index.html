@@ -16,13 +16,13 @@
 <body class="bg-light">
     <!-- search bar  -->
     <h1 class="text-center text-warning mt-5 ">Find Your Favorite Books Here...</h1>
-    <section class="container mt-3 mb-5">
+    <section class="container mt-3 mb-2">
         <div class="input-group mb-3">
             <input id="search-input" type="text" class="form-control" placeholder="Search here" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button onclick="searchBook()" class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
           </div>
     </section>
-    <p>Search result found: ${number}</p>
+    <p class="text-center text-warning mb-5">Search result found: <span id="result-counter"></span></p>
     <!-- error massage  -->
     <p id="error-message" class="text-center text-color">Opps, somthing going wrong!!😤 <br> Try again..😬.</p>
       <!-- search result section -->
